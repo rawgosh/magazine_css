@@ -1,0 +1,187 @@
+*, ::before, ::after {
+    padding: 0; /* Resets padding */
+    margin: 0; /* Resets margin */
+    box-sizing: border-box; /* Applies border-box box model */
+  }
+  
+  html {
+    font-size: 62.5%; /* Sets the base font size to 10px for easy rem calculations */
+  }
+  
+  body {
+    font-family: Baskervville, serif; /* Sets the default font family */
+    color: linen; /* Sets the text color */
+    background-color: rgb(20, 30, 40); /* Sets the background color */
+  }
+  
+  h1 {
+    font-family: Anton, sans-serif; /* Sets the font family for h1 elements */
+  }
+  
+  h2, h3, h4, h5, h6 {
+    font-family: Raleway, sans-serif; /* Sets the font family for heading elements */
+  }
+  
+  a {
+    text-decoration: none; /* Removes underline from links */
+    color: linen; /* Sets the link color */
+  }
+  
+  main {
+    display: grid; /* Applies grid layout to the main element */
+    grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr); /* Defines grid columns */
+    row-gap: 3rem; /* Adds a gap between rows */
+  }
+  
+  .heading {
+    grid-column: 2/3; /* Positions the heading section in the middle column */
+    display: grid; /* Applies grid layout to the heading section */
+    grid-template-columns: repeat(2, 1fr); /* Defines two equal-width columns */
+    row-gap: 1.5rem; /* Adds a gap between rows */
+  }
+  
+  .text {
+    grid-column: 2/3; /* Positions the text section in the middle column */
+    font-size: 1.8rem; /* Sets the font size */
+    letter-spacing: 0.6px; /* Adds letter spacing */
+    column-width: 25rem; /* Sets the column width for text wrapping */
+    text-align: justify; /* Justifies the text */
+  }
+  
+  .hero {
+    grid-column: 2/3; /* Positions the hero section in the middle column */
+    grid-column: 1/-1; /* Spans the hero section across all columns */
+    position: relative; /* Allows positioning of child elements */
+  }
+  
+  img {
+    width: 100%; /* Makes images responsive */
+    object-fit: cover; /* Ensures images maintain aspect ratio */
+  }
+  
+  .hero-title {
+    text-align: center; /* Centers the title text */
+    color: orangered; /* Sets the title color */
+    font-size: 8rem; /* Sets the title font size */
+  }
+  
+  .hero-subtitle {
+    font-size: 2.4rem; /* Sets the subtitle font size */
+    color: orangered; /* Sets the subtitle color */
+    text-align: center; /* Centers the subtitle text */
+  }
+  
+  .author {
+    font-size: 2rem; /* Sets the author font size */
+    font-family: Raleway, sans-serif; /* Sets the author font family */
+  }
+  
+  .author-name a:hover {
+    background-color: #306203; /* Sets the background color on hover for author name */
+  }
+  
+  .publish-date {
+    color: rgba(255, 255, 255, 0.5); /* Sets the publish date color with transparency */
+  }
+  
+  .social-icons {
+    display: grid; /* Applies grid layout to social icons */
+    font-size: 3rem; /* Sets the social icon font size */
+    grid-template-columns: repeat(5, 1fr); /* Defines five equal-width columns */
+    grid-auto-flow: column; /* Arranges items in columns */
+    grid-auto-columns: 1fr; /* Sets the column width automatically */
+    align-items: center; /* Centers the items vertically */
+  }
+  
+  .first-paragraph::first-letter {
+    font-size: 6rem; /* Sets the font size for the first letter */
+    color: orangered; /* Sets the color for the first letter */
+    float: left; /* Floats the first letter to the left */
+    margin-right: 1rem; /* Adds some spacing after the first letter */
+  }
+  
+  hr {
+    margin: 1.5rem 0; /* Adds vertical margin to the horizontal rule */
+    border: 1px solid rgba(120, 120, 120, 0.6); /* Sets the border style and color with transparency */
+  }
+  
+  .quote {
+    color: #00beef; /* Sets the quote color */
+    font-size: 2.4rem; /* Sets the quote font size */
+    text-align: center; /* Centers the quote text */
+    font-family: Raleway, sans-serif; /* Sets the quote font family */
+  }
+  
+  .quote::before {
+    content: '" '; /* Adds an opening quote before the quote text */
+  }
+  
+  .quote::after {
+    content: ' "'; /* Adds a closing quote after the quote text */
+  }
+  
+  .text-with-images {
+    display: grid; /* Applies grid layout to the text-with-images section */
+    grid-template-columns: 1fr 2fr; /* Defines two columns with a 1:2 width ratio */
+    column-gap: 3rem; /* Adds a gap between columns */
+    margin-bottom: 3rem; /* Adds bottom margin */
+  }
+  
+  .lists {
+    list-style-type: none; /* Removes the default list style */
+    margin-top: 2rem; /* Adds top margin */
+  }
+  
+  .lists li {
+    margin-bottom: 1.5rem; /* Adds bottom margin to list items */
+  }
+  
+  .list-title, .list-subtitle {
+    color: #00beef; /* Sets the color for list titles and subtitles */
+  }
+  
+  .image-wrapper {
+    display: grid; /* Applies grid layout to the image wrapper */
+    grid-template-columns: 2fr 1fr; /* Defines two columns with a 2:1 width ratio */
+    grid-template-rows: repeat(3, min-content); /* Defines three rows with minimum content height */
+    gap: 2rem; /* Adds a gap between grid items */
+    place-items: center; /* Centers the grid items */
+  }
+  
+  .image-1, .image-3 {
+    grid-column: 1/-1; /* Spans the images across all columns */
+  }
+  
+  /* Media queries for responsive design */
+  @media only screen and (max-width: 720px) {
+    .image-wrapper {
+      grid-template-columns: 1fr; /* Collapses the image wrapper to a single column */
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .text-with-images {
+      grid-template-columns: 1fr; /* Collapses the text-with-images section to a single column */
+    }
+  }
+  
+  @media only screen and (max-width: 550px) {
+    .hero-title {
+      font-size: 6rem; /* Decreases the hero title font size */
+    }
+    .hero-subtitle, .author, .quote, .list-title {
+      font-size: 1.8rem; /* Decreases the font size for various elements */
+    }
+    .social-icons {
+      font-size: 2rem; /* Decreases the social icon font size */
+    }
+    .text {
+      font-size: 1.6rem; /* Decreases the text font size */
+    }
+  }
+  
+  @media only screen and (max-width: 420px) {
+    .hero-title {
+      font-size: 4.5rem; /* Decreases the hero title font size further */
+    }
+  }
